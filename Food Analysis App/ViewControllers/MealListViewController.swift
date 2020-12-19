@@ -41,11 +41,11 @@ class MealListViewController: UIViewController, Storyboarded {
         tableView.delegate = self
         tableView.dataSource = self
         
-        let imageNib = UINib(nibName: "MealTableViewCell", bundle: nil)
-        tableView.register(imageNib, forCellReuseIdentifier: "MealTableViewCell")
+        let imageNib = UINib(nibName: AppStrings.mealCell, bundle: nil)
+        tableView.register(imageNib, forCellReuseIdentifier: AppStrings.mealCell)
         
-        let headerImageNib = UINib(nibName: "HeaderTableViewCell", bundle: nil)
-        tableView.register(headerImageNib, forCellReuseIdentifier: "HeaderTableViewCell")
+        let headerImageNib = UINib(nibName: AppStrings.headerCell, bundle: nil)
+        tableView.register(headerImageNib, forCellReuseIdentifier: AppStrings.headerCell)
     }
 }
 
@@ -71,7 +71,7 @@ extension MealListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(indexPath.row == 0) {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderTableViewCell", for: indexPath) as? HeaderTableViewCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: AppStrings.headerCell, for: indexPath) as? HeaderTableViewCell else {
                 fatalError()
             }
             
@@ -80,7 +80,7 @@ extension MealListViewController: UITableViewDataSource {
             return cell
         }
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MealTableViewCell", for: indexPath) as? MealTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AppStrings.mealCell, for: indexPath) as? MealTableViewCell else {
             fatalError()
         }
         

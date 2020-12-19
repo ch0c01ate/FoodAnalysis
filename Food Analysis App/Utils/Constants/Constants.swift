@@ -22,6 +22,8 @@ struct AppStrings {
     static let mealNotDescribed: String = "Please, describe your meal..."
     static let dateNotSelected: String = "Please, select date..."
     static let entityName: String = "MealEntity"
+    static let headerCell: String = "HeaderTableViewCell"
+    static let mealCell: String = "MealTableViewCell"
 }
 
 struct AppConstants {

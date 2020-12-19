@@ -64,7 +64,7 @@ class MealPageViewController: UIViewController, Storyboarded {
         var text: String = "Ingredients:\n\n"
         
         for ingredient in ingredients {
-            text.append("\(ingredient.food!.capitalized) with quantity of \(ingredient.quantity!) with weight of \(ingredient.weight!);\n")
+            text.append("\(ingredient.food!.capitalized) with weight of \(ingredient.weight!)g;\n")
         }
         
         text.append("\nHealth tags: ")
