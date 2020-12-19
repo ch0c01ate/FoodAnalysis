@@ -44,8 +44,8 @@ class MealListViewController: UIViewController, Storyboarded {
         let imageNib = UINib(nibName: "MealTableViewCell", bundle: nil)
         tableView.register(imageNib, forCellReuseIdentifier: "MealTableViewCell")
         
-        let imageNib2 = UINib(nibName: "HeaderTableViewCell", bundle: nil)
-        tableView.register(imageNib2, forCellReuseIdentifier: "HeaderTableViewCell")
+        let headerImageNib = UINib(nibName: "HeaderTableViewCell", bundle: nil)
+        tableView.register(headerImageNib, forCellReuseIdentifier: "HeaderTableViewCell")
     }
 }
 
@@ -61,7 +61,11 @@ extension MealListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let meal = self.coordinator?.mealManager?.getSortedMeals()[indexPath.row] else { fatalError() }
+        if(indexPath.row == 0) {
+            return
+        }
+        
+        guard let meal = self.coordinator?.mealManager?.getSortedMeals()[indexPath.row - 1] else { fatalError() }
         self.coordinator?.showMeal(meal: meal)
     }
     
@@ -71,7 +75,7 @@ extension MealListViewController: UITableViewDataSource {
                 fatalError()
             }
             
-            cell.setupText(text: "Total kkal: \(self.coordinator?.mealManager?.getTotalCalories() ?? 0.0)")
+            cell.setupText(text: "Total kkal:    \(self.coordinator?.mealManager?.getTotalCalories() ?? 0.0)")
             
             return cell
         }

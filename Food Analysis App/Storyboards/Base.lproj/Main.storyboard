@@ -343,6 +343,7 @@
                                 </constraints>
                                 <state key="normal" title="Delete Meal"/>
                                 <connections>
+                                    <action selector="deleteMeal:" destination="H5f-Ot-aN7" eventType="touchUpInside" id="jdf-Pt-22d"/>
                                     <action selector="saveMeal:" destination="XYG-1u-JAD" eventType="touchUpInside" id="x34-Sd-hH1"/>
                                 </connections>
                             </button>
@@ -364,6 +365,8 @@
                     </view>
                     <connections>
                         <outlet property="appBarView" destination="EEQ-st-87W" id="Gxt-7H-9c1"/>
+                        <outlet property="deleteBtn" destination="H2X-cn-zxU" id="t1p-0S-u5q"/>
+                        <outlet property="mealTextView" destination="dUr-KQ-6tH" id="7Bp-lh-1za"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4IR-yM-vJ8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
